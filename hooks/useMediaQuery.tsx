@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import useEventListener from "./useEventListener"
+import { useEventListener } from "./useEventListener"
 
 /**
  * `useMediaQuery` is a custom React hook that checks if a media query matches the current window.
@@ -8,7 +8,7 @@ import useEventListener from "./useEventListener"
  * @param mediaQuery - The media query string to check.
  * @returns The boolean state indicating if the media query matches the current window.
  */
-export default function useMediaQuery(mediaQuery: string) {
+export function useMediaQuery(mediaQuery: string) {
     const [isMatch, setIsMatch] = useState(false)
     const [mediaQueryList, setMediaQueryList] = useState<MediaQueryList | null>(
         null

@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import useMediaQuery from "./useMediaQuery"
+import {useMediaQuery} from "./useMediaQuery"
 import { useLocalStorage } from "./useStorage"
 
 /**
@@ -10,7 +10,7 @@ import { useLocalStorage } from "./useStorage"
  *
  * @returns An array containing the `enabled` state and a function to toggle the dark mode.
  */
-export default function useDarkMode() {
+export function useDarkMode() {
     const [darkMode, setDarkMode] = useLocalStorage("useDarkMode")
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
     const enabled = darkMode ?? prefersDarkMode

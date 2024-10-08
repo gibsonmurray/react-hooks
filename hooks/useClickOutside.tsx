@@ -8,7 +8,7 @@ import useEventListener from "./useEventListener"
  * @param ref - A ref to the element to detect clicks outside of.
  * @param callback - The callback function to execute when a click outside the element occurs.
  */
-export default function useClickOutside<T extends HTMLElement>(
+export function useClickOutside<T extends HTMLElement>(
     ref: RefObject<T>,
     callback: (e: Event) => void
 ) {

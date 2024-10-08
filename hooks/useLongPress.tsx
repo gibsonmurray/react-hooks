@@ -1,6 +1,6 @@
-import useEventListener from "./useEventListener"
-import useTimeout from "./useTimeout"
-import useMounted from "./useMounted"
+import { useEventListener } from "./useEventListener"
+import { useTimeout } from "./useTimeout"
+import { useMounted } from "./useMounted"
 import type { RefObject } from "react"
 
 /**
@@ -11,7 +11,7 @@ import type { RefObject } from "react"
  * @param cb - The callback function to execute when a long press is detected.
  * @param delay - The delay time in milliseconds. Default is 250 milliseconds.
  */
-export default function useLongPress<T extends HTMLElement>(
+export function useLongPress<T extends HTMLElement>(
     ref: RefObject<T>,
     cb: () => void,
     { delay = 250 } = {}

@@ -8,7 +8,7 @@ import { useState, useCallback } from "react"
  * @param initialValue - The initial value of the state.
  * @returns An array containing the state value, a function to update the state, and a boolean indicating if the state is valid.
  */
-export default function useStateValidation<T>(
+export function useStateValidation<T>(
     validationFunc: (value: T) => boolean,
     initialValue: T
 ) {

@@ -1,4 +1,4 @@
-import useAsync from "./useAsync"
+import { useAsync } from "./useAsync"
 
 /**
  * `useScript` is a custom React hook that dynamically loads a script from a specified URL.
@@ -7,7 +7,7 @@ import useAsync from "./useAsync"
  * @param url - The URL of the script to load.
  * @returns A promise that resolves when the script is loaded.
  */
-export default function useScript(url: string) {
+export function useScript(url: string) {
     return useAsync(() => {
         const script = document.createElement("script")
         script.src = url

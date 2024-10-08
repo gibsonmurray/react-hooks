@@ -23,7 +23,7 @@ export interface OrientationState {
  * @return - An object containing the orientation angle, type, aspect ratio, and element orientation.
  */
 
-function useOrientation<T extends HTMLElement>(
+export function useOrientation<T extends HTMLElement>(
     elementRef?: RefObject<T>,
     trackWindow: boolean = false
 ): OrientationState {
@@ -85,5 +85,3 @@ function useOrientation<T extends HTMLElement>(
 
     return orientation
 }
-
-export { useOrientation }

@@ -21,7 +21,7 @@ export interface UseImageLoadState {
  * @return - An object containing the current source of the image, loading state, loaded state, and error state.
  */
 
-export default function useImageLoad(
+export function useImageLoad(
     { thumbnailSrc, fullSrc, lazyLoad = false }: UseImageLoadOptions,
     imgRef: RefObject<HTMLImageElement>
 ): UseImageLoadState {

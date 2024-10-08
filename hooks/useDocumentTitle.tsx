@@ -7,7 +7,7 @@ import { useEffect } from "react"
  * @param title - The title to set for the document.
  * @param revertOnUnmount - A boolean to determine if the document title should be reverted on unmount. Default is true.
  */
-export default function useDocumentTitle(
+export function useDocumentTitle(
     title: string,
     revertOnUnmount: boolean = true
 ) {

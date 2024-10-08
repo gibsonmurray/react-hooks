@@ -7,7 +7,7 @@ import copy from "copy-to-clipboard"
  *
  * @returns An array containing the `copyToClipboard` function and an object with the `value` and `success` states.
  */
-export default function useClipboard() {
+export function useClipboard() {
     const [value, setValue] = useState<string | null>(null)
     const [success, setSuccess] = useState<boolean | null>(null)
 

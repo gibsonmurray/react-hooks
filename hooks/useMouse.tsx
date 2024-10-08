@@ -24,7 +24,7 @@ export interface UseMouseState {
  * @return - An object containing the mouse's x and y coordinates.
  */
 
-export default function useMouse<T extends HTMLElement>(
+export function useMouse<T extends HTMLElement>(
     ref?: RefObject<T>,
     options: MouseOptions = {
         offsetX: 10,

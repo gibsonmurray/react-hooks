@@ -10,7 +10,7 @@ export type AsyncFunction<T> = () => Promise<T>
  * @param deps - An array of dependencies that triggers the execution of the callback.
  * @returns An object containing the loading state, error, and value of the asynchronous operation.
  */
-export default function useAsync<T>(
+export function useAsync<T>(
     callback: AsyncFunction<T>,
     deps: any[] = []
 ) {

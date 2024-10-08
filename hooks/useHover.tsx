@@ -1,5 +1,5 @@
 import { useState, type RefObject } from "react"
-import useEventListener from "./useEventListener"
+import { useEventListener } from "./useEventListener"
 
 /**
  * `useHover` is a custom React hook that detects when an element is hovered over.
@@ -8,7 +8,7 @@ import useEventListener from "./useEventListener"
  * @param ref - The ref object for the element to detect hover on.
  * @returns The hovered state.
  */
-export default function useHover<T extends HTMLElement>(ref: RefObject<T>) {
+export function useHover<T extends HTMLElement>(ref: RefObject<T>) {
     const [hovered, setHovered] = useState(false)
 
     useEventListener("mouseover", () => setHovered(true), ref.current)

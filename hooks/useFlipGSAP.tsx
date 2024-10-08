@@ -13,7 +13,7 @@ gsap.registerPlugin(Flip)
  * @param options - Configuration options for the flip animation.
  * @returns An object containing a boolean to swap the rendered content, a play function that triggers the animation, and a ref to the scope of the flip.
  */
-export default function useFlipGSAP(
+export function useFlipGSAP(
     target: gsap.DOMTarget,
     options: Flip.FlipStateVars &
         Flip.FromToVars & { revertOnUpdate?: boolean } = {

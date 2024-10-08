@@ -8,7 +8,7 @@ import { useCallback, useRef, useState } from "react"
  * @param capacity - The maximum number of history entries. Default is 10.
  * @returns An array containing the current value, a function to set the value, and an object with methods to navigate through the history.
  */
-export default function useStateHistory<T>(
+export function useStateHistory<T>(
     defaultValue: T,
     { capacity = 10 } = {}
 ) {

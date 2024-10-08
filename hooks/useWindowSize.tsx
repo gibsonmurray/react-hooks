@@ -1,5 +1,5 @@
 import { useState } from "react"
-import useEventListener from "./useEventListener"
+import { useEventListener } from "./useEventListener"
 
 /**
  * `useWindowSize` is a custom React hook that monitors the size of the browser window.
@@ -7,7 +7,7 @@ import useEventListener from "./useEventListener"
  *
  * @returns An object containing the current width and height of the window.
  */
-export default function useWindowSize() {
+export function useWindowSize() {
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,

@@ -19,7 +19,7 @@ export interface UseMediaDevicesState {
  * @return - An object containing the array of media devices, loading status, and error information.
  */
 
-export default function useMediaDevices(
+export function useMediaDevices(
     requestPermission: boolean = false
 ): UseMediaDevicesState {
     const [state, setState] = useState<UseMediaDevicesState>({

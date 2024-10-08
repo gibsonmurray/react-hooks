@@ -35,7 +35,9 @@ export interface PermissionState {
  * @return - An object containing the permission state, loading status, and error information.
  */
 
-const usePermission = (permissionName: PermissionName): PermissionState => {
+export function usePermission(
+    permissionName: PermissionName
+): PermissionState {
     const [permission, setPermission] = useState<PermissionState>({
         state: "prompt",
         isLoading: false,
@@ -89,5 +91,3 @@ const usePermission = (permissionName: PermissionName): PermissionState => {
 
     return permission
 }
-
-export { usePermission }

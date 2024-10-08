@@ -11,7 +11,7 @@ const listeners = new Set<() => void>()
  * @param initialValue - The initial value of the state (optional).
  * @returns A tuple containing the current state value and a function to update it.
  */
-export default function useGlobalState<T>(
+export function useGlobalState<T>(
     key: string,
     initialValue?: T
 ): [T, (newValue: T | ((prevValue: T) => T)) => void] {

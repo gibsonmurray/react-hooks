@@ -1,5 +1,5 @@
 import { useState } from "react"
-import useEventListener from "./useEventListener"
+import { useEventListener } from "./useEventListener"
 
 /**
  * `useOnlineStatus` is a custom React hook that monitors the user's online status.
@@ -7,7 +7,7 @@ import useEventListener from "./useEventListener"
  *
  * @returns The boolean state indicating if the user is online.
  */
-export default function useOnlineStatus() {
+export function useOnlineStatus() {
     const [online, setOnline] = useState(navigator.onLine)
 
     useEventListener("online", () => setOnline(navigator.onLine))

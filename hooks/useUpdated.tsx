@@ -12,7 +12,7 @@ import {
  * @param callback - The function to be executed when the dependencies change.
  * @param dependencies - The dependencies to watch for changes, if not provided, the hook will execute the callback on every render.
  */
-export default function useUpdated(
+export function useUpdated(
     callback: EffectCallback,
     dependencies?: DependencyList
 ) {

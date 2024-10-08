@@ -9,7 +9,7 @@ import Cookies from "js-cookie"
  * @param defaultValue - The default value to set if the cookie is not found.
  * @returns An array containing the cookie value, a function to update the cookie, and a function to delete the cookie.
  */
-export default function useCookie(name: string, defaultValue: any = "") {
+export function useCookie(name: string, defaultValue: any = "") {
     const [value, setValue] = useState(() => {
         const cookie = Cookies.get(name)
         if (cookie) return cookie

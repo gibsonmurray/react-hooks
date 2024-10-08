@@ -6,6 +6,6 @@ import { useEffect, type EffectCallback } from "react"
  *
  * @param callback - The function to be executed when the component is mounted.
  */
-export default function useMounted(callback: EffectCallback) {
+export function useMounted(callback: EffectCallback) {
     useEffect(callback, [])
 }

@@ -8,7 +8,7 @@ import { useState, useEffect, useCallback, useRef } from "react"
  * @return - A boolean state indicating if the user is idle.
  */
 
-export default function useIdle(idleTime: number) {
+export function useIdle(idleTime: number) {
     const [isIdle, setIsIdle] = useState(false)
     const idleTimerRef = useRef<ReturnType<typeof setTimeout>>()
 

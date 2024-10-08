@@ -6,6 +6,6 @@ import { useEffect } from "react"
  *
  * @param callback - The function to be executed when the component is unmounted.
  */
-export default function useUnmounted(callback: () => void) {
+export function useUnmounted(callback: () => void) {
     useEffect(() => callback, [])
 }

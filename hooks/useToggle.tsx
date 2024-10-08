@@ -7,7 +7,7 @@ import { useState } from "react"
  * @param defaultValue - The initial value of the state.
  * @returns An array containing the state value and a function to toggle the value, the function also accepts a boolean value to set the state to.
  */
-export default function useToggle(defaultValue: boolean) {
+export function useToggle(defaultValue: boolean) {
     const [value, setValue] = useState(defaultValue)
 
     function toggleValue(value: boolean) {

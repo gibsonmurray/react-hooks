@@ -7,7 +7,7 @@ import { useLayoutEffect } from "react"
  * @param lock - (Optional) A boolean indicating whether to lock the body scroll. Defaults to true.
  */
 
-export default function useLockScroll(lock: boolean = true) {
+export function useLockScroll(lock: boolean = true) {
     useLayoutEffect(() => {
         if (typeof document === "undefined") {
             return

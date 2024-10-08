@@ -35,7 +35,7 @@ export interface UseFormReturnType<T> {
  * @param validate - A function to validate form values. Should return an object with error messages.
  * @return - An object containing form values, errors, handlers for changes, blurs, submission, form reset, submission status, and whether the form is submitting.
  */
-export default function useForm<T extends Record<string, any>>(
+export function useForm<T extends Record<string, any>>(
     initialValues: T,
     validate?: ValidatorFunction<T>
 ): UseFormReturnType<T> {

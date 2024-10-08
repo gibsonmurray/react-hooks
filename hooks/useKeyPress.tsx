@@ -9,7 +9,7 @@ import { useState, useEffect, useCallback, useRef } from "react"
  * @return - A boolean state indicating if the target key is currently pressed.
  */
 
-export default function useKeyPress(
+export function useKeyPress(
     targetKey: string,
     options: { debounce?: number; targetElement?: EventTarget | null } = {}
 ) {

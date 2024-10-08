@@ -16,7 +16,7 @@ export interface DragDropState {
  * @return - An object containing the drag and drop state and binding functions for draggable and droppable elements.
  */
 
-export default function useDragDrop(
+export function useDragDrop(
     onDrop: (dragId: string, dropId: string) => void
 ) {
     const [state, setState] = useState<DragDropState>({

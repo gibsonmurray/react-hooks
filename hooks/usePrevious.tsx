@@ -7,7 +7,7 @@ import { useRef } from "react"
  * @param value - The current value to track.
  * @returns The previous value.
  */
-export default function usePrevious<T>(value: T) {
+export function usePrevious<T>(value: T) {
     const currentRef = useRef(value)
     const previousRef = useRef<T>()
 

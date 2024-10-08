@@ -9,7 +9,7 @@ import isEqual from "lodash/fp/isEqual"
  * @param callback - The function to be executed when the dependencies change.
  * @param dependencies - An array of dependencies that trigger the execution of the callback.
  */
-export default function useDeepEffect(
+export function useDeepEffect(
     callback: () => void,
     dependencies: any[]
 ) {

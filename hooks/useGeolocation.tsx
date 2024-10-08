@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
  * @param options - The options for the geolocation request.
  * @returns An object containing the `loading`, `error`, and `data` states.
  */
-export default function useGeolocation(options: PositionOptions) {
+export function useGeolocation(options: PositionOptions) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [data, setData] = useState({})

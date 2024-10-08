@@ -7,7 +7,7 @@ import { useState } from "react"
  * @param defaultValue - The initial array to set as the state.
  * @returns An object containing the array, a set function to update the array, and methods to add, filter, update, remove, and clear elements.
  */
-export default function useArray<T>(defaultValue: T[]) {
+export function useArray<T>(defaultValue: T[]) {
     const [array, setArray] = useState(defaultValue)
 
     function push(element: T) {

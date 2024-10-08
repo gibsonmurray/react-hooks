@@ -1,4 +1,4 @@
-import useAsync from "./useAsync"
+import { useAsync } from "./useAsync"
 
 const DEFAULT_OPTIONS = {
     headers: { "Content-Type": "application/json" },
@@ -13,7 +13,7 @@ const DEFAULT_OPTIONS = {
  * @param dependencies - An array of dependencies that trigger the execution of the fetch request.
  * @returns The fetched data.
  */
-export default function useFetch(url: string, options = {}, dependencies = []) {
+export function useFetch(url: string, options = {}, dependencies = []) {
     return useAsync(async () => {
         const res = await fetch(url, { ...DEFAULT_OPTIONS, ...options })
         const data = await res.json()

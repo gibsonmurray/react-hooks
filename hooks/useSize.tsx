@@ -7,7 +7,7 @@ import { useState, useEffect, type RefObject } from "react"
  * @param ref - The ref object for the element to monitor.
  * @returns The size of the element.
  */
-export default function useSize<T extends HTMLElement>(ref: RefObject<T>) {
+export function useSize<T extends HTMLElement>(ref: RefObject<T>) {
     const [size, setSize] = useState({})
 
     useEffect(() => {

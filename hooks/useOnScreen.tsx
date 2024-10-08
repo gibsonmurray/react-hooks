@@ -8,7 +8,7 @@ import { useEffect, useState, type RefObject } from "react"
  * @param rootMargin - The margin around the root element to include in the intersection calculation. Default is "0px".
  * @returns The boolean state indicating if the element is visible in the viewport.
  */
-export default function useOnScreen(
+export function useOnScreen(
     ref: RefObject<HTMLElement>,
     rootMargin = "0px"
 ) {

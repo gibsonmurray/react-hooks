@@ -10,7 +10,7 @@ export type EventHandler<E extends Event = Event> = (event: E) => void
  * @param callback - The function to execute when the event occurs.
  * @param element - The element to add the event listener to. Default is the window.
  */
-export default function useEventListener<E extends Event = Event>(
+export function useEventListener<E extends Event = Event>(
     eventType: string,
     callback: EventHandler<E>,
     element: any = window

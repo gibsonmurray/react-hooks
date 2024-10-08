@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import useRenderCount from "./useRenderCount"
+import { useRenderCount } from "./useRenderCount"
 
 /**
  * `useDebug` is a custom React hook that provides debugging information about a component's props and renders.
@@ -9,7 +9,7 @@ import useRenderCount from "./useRenderCount"
  * @param componentName - The name of the component to debug.
  * @param props - The props of the component to debug.
  */
-export default function useDebug(componentName: string, props: any) {
+export function useDebug(componentName: string, props: any) {
     const count = useRenderCount()
     const changedProps = useRef({})
     const previousProps = useRef(props)
