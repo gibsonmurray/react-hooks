@@ -1,5 +1,5 @@
 import { type RefObject } from "react"
-import useEventListener from "./useEventListener"
+import { useEventListener } from "./useEventListener"
 
 /**
  * `useClickOutside` is a custom React hook that detects clicks outside a specified element.

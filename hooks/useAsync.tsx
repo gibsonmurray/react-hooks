@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, type DependencyList } from "react"
 
 export type AsyncFunction<T> = () => Promise<T>
 
@@ -12,7 +12,7 @@ export type AsyncFunction<T> = () => Promise<T>
  */
 export function useAsync<T>(
     callback: AsyncFunction<T>,
-    deps: any[] = []
+    dependencies: DependencyList = []
 ) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<Error | undefined>()
@@ -26,7 +26,7 @@ export function useAsync<T>(
             .then(setValue)
             .catch(setError)
             .finally(() => setLoading(false))
-    }, deps)
+    }, dependencies)
 
     useEffect(() => {
         callbackMemoized()

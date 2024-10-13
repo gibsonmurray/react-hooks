@@ -1,3 +1,4 @@
+import { type DependencyList } from "react"
 import { useAsync } from "./useAsync"
 
 const DEFAULT_OPTIONS = {
@@ -13,12 +14,16 @@ const DEFAULT_OPTIONS = {
  * @param dependencies - An array of dependencies that trigger the execution of the fetch request.
  * @returns The fetched data.
  */
-export function useFetch(url: string, options = {}, dependencies = []) {
+export function useFetch(
+    url: string,
+    options = {},
+    dependencies: DependencyList = []
+) {
     return useAsync(async () => {
         const res = await fetch(url, { ...DEFAULT_OPTIONS, ...options })
         const data = await res.json()
 
         if (res.ok) return data
-        throw data // This will be caught as an error by useAsync
+        throw data
     }, dependencies)
 }
