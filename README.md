@@ -1,15 +1,7 @@
-# react-hooks
+# Gibson's React Hooks
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
+## Installation
 
 ```bash
-bun run index.ts
+bun add @gibson/react-hooks
 ```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
