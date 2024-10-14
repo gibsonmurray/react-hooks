@@ -35,6 +35,7 @@
         "build:iife": "bun build index.ts --outdir ./dist/iife --format iife --minify"
     },
     "publishConfig": {
-        "access": "public"
+        "access": "public",
+        "@gibsonmurray:registry": "https://npm.pkg.github.com"
     }
 }
