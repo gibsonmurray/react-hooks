@@ -1,5 +1,7 @@
 {
     "name": "@gibson/react-hooks",
+    "version": "1.0.0",
+    "description": "A collection of custom React hooks",
     "module": "index.ts",
     "type": "module",
     "devDependencies": {
