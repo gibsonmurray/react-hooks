@@ -16,7 +16,7 @@ jobs:
             - name: Install and Build
               run: |
                   bun install
-                  bun build
+                  bun run build
 
     publish-gpr:
         needs: build
