@@ -20,4 +20,4 @@ jobs:
             - name: Configure Bun with .npmrc
               run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
             - name: Publish
-              run: bun publish
+              run: npm publish
