@@ -31,7 +31,7 @@ jobs:
                   bun-version: latest
             - name: Setup .npmrc
               run: |
-                  echo "@${GITHUB_REPOSITORY_OWNER}:registry=https://npm.pkg.github.com" > .npmrc
+                  echo "@gibsonmurray:registry=https://npm.pkg.github.com" > .npmrc
                   echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
             - name: Publish
               run: npm publish
