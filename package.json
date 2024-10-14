@@ -1,7 +1,7 @@
 {
     "name": "@gibsonmurray/react-hooks",
     "author": "Gibson Murray",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A collection of custom React hooks",
     "type": "module",
     "license": "ISC",
