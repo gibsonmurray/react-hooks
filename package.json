@@ -33,9 +33,9 @@
     "types": "dist/types/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "bun run build:esm && bun run build:cjs && bun run build:iife && tsc",
-        "build:esm": "bun build index.ts --outdir ./dist/esm --format esm",
-        "build:cjs": "bun build index.ts --outdir ./dist/cjs --format cjs",
-        "build:iife": "bun build index.ts --outdir ./dist/iife --format iife"
+        "build": "bun run build:esm && tsc",
+        "build:esm": "bun build index.ts --outdir ./dist  --minify",
+        "build:cjs": "bun build index.ts --outdir ./dist/cjs --format cjs --minify",
+        "build:iife": "bun build index.ts --outdir ./dist/iife --format iife --minify"
     }
 }
