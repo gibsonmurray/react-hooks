@@ -1,5 +1,5 @@
 {
-    "name": "@gibson/react-hooks",
+    "name": "@gibsonmurray/react-hooks",
     "author": "Gibson Murray",
     "version": "1.0.0-alpha.1",
     "description": "A collection of custom React hooks",
@@ -35,7 +35,6 @@
         "build:iife": "bun build index.ts --outdir ./dist/iife --format iife --minify"
     },
     "publishConfig": {
-        "access": "public",
-        "@gibsonmurray:registry": "https://npm.pkg.github.com"
+        "access": "public"
     }
 }
