@@ -15,8 +15,19 @@ jobs:
                   node-version: 16
             - name: Install and Build with Bun
               run: |
-                  curl -fsSL https://bun.sh/install | bash
-                  bun run build
+                curl -fsSL https://bun.sh/install | bash
+                echo 'export BUN_INSTALL="$HOME/.bun"' >> $GITHUB_ENV
+                echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $GITHUB_ENV
+
+            - name: Source Bun
+              run: |
+                  source ~/.bashrc
+                  bun --version
+
+            - name: Run Bun Commands
+              run: |
+                  bun install
+                  bun build
 
     publish-gpr:
         needs: build
