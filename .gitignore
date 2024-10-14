@@ -200,3 +200,4 @@ dist-ssr
 *.sw?
 
 bun.lockb
+.npmrc
