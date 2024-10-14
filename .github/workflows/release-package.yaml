@@ -18,8 +18,8 @@ jobs:
             - name: Build
               run: bun run build
             - name: Authenticate with npm
-              run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+              run: bunx npm login
+              run: "gibsonmurray"
+              run: "${{ secrets.NPM_TOKEN }}"
             - name: Publish
               run: bun publish
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
