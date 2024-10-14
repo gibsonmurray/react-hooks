@@ -1,4 +1,5 @@
 import { useArray } from "./hooks/useArray"
+import { useAsync } from "./hooks/useAsync"
 import { useClickOutside } from "./hooks/useClickOutside"
 import { useClipboard } from "./hooks/useClipboard"
 import { useCookie } from "./hooks/useCookie"
@@ -43,6 +44,7 @@ import { useWindowSize } from "./hooks/useWindowSize"
 
 export {
     useArray,
+    useAsync,
     useClickOutside,
     useClipboard,
     useCookie,
