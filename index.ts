@@ -35,7 +35,9 @@ import { useScript } from "./hooks/useScript"
 import { useSize } from "./hooks/useSize"
 import { useStateHistory } from "./hooks/useStateHistory"
 import { useStateValidation } from "./hooks/useStateValidation"
-import { useLocalStorage, useSessionStorage } from "./hooks/useStorage"
+import { useStorage } from "./hooks/useStorage"
+import { useLocalStorage } from "./hooks/useLocalStorage"
+import { useSessionStorage } from "./hooks/useSessionStorage"
 import { useTimeout } from "./hooks/useTimeout"
 import { useToggle } from "./hooks/useToggle"
 import { useUnmounted } from "./hooks/useUnmounted"
@@ -80,6 +82,7 @@ export {
     useSize,
     useStateHistory,
     useStateValidation,
+    useStorage,
     useLocalStorage,
     useSessionStorage,
     useTimeout,
