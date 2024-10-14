@@ -20,7 +20,7 @@ jobs:
             - name: Authenticate with npm
               run: |
                   bunx npm login
-                  username: gibsonmurray
-                  password: ${{ secrets.NPM_TOKEN }}
+                  gibsonmurray
+                  ${{ secrets.NPM_TOKEN }}
             - name: Publish
               run: bun publish
