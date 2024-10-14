@@ -1,6 +1,5 @@
 {
     "name": "@gibson/react-hooks",
-    "private": "false",
     "author": "Gibson Murray",
     "version": "1.0.0-alpha.1",
     "description": "A collection of custom React hooks",
