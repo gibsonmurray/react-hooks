@@ -33,5 +33,8 @@
         "build:esm": "bun build index.ts --outdir ./dist  --minify",
         "build:cjs": "bun build index.ts --outdir ./dist/cjs --format cjs --minify",
         "build:iife": "bun build index.ts --outdir ./dist/iife --format iife --minify"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
