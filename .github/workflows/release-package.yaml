@@ -10,21 +10,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
+            - uses: oven-sh/setup-bun@v1
               with:
-                  node-version: 16
-            - name: Install and Build with Bun
-              run: |
-                curl -fsSL https://bun.sh/install | bash
-                echo 'export BUN_INSTALL="$HOME/.bun"' >> $GITHUB_ENV
-                echo 'export PATH="$BUN_INSTALL/bin:$PATH"' >> $GITHUB_ENV
-
-            - name: Source Bun
-              run: |
-                  source ~/.bashrc
-                  bun --version
-
-            - name: Run Bun Commands
+                  bun-version: latest
+            - name: Install and Build
               run: |
                   bun install
                   bun build
@@ -37,15 +26,13 @@ jobs:
             contents: read
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
+            - uses: oven-sh/setup-bun@v1
               with:
-                  node-version: 16
-                  registry-url: https://npm.pkg.github.com/
-            - name: Install Bun and Publish
+                  bun-version: latest
+            - name: Setup .npmrc
               run: |
-                  curl -fsSL https://bun.sh/install | bash
-                  echo 'export PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
                   echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM }}" > ~/.npmrc
-                  npm publish
+            - name: Publish
+              run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM}}
