@@ -1,34 +1,33 @@
 name: Release Package
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run build
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 16
+            - run: bun run build
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM}}
+    publish-gpr:
+        needs: build
+        runs-on: ubuntu-latest
+        permissions:
+            packages: write
+            contents: read
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 16
+                  registry-url: https://npm.pkg.github.com/
+            - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM }}" > ~/.npmrc
+            - run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM}}
