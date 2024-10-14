@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-import {useMediaQuery} from "./useMediaQuery"
-import { useLocalStorage } from "./useStorage"
+import { useMediaQuery } from "./useMediaQuery"
+import { useLocalStorage } from "./useLocalStorage"
 
 /**
  * `useDarkMode` is a custom React hook that manages the dark mode state of the application.
