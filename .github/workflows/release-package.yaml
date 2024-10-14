@@ -17,23 +17,4 @@ jobs:
               run: |
                   bun install
                   bun run build
-
-    publish-gpr:
-        needs: build
-        runs-on: ubuntu-latest
-        permissions:
-            packages: write
-            contents: read
-        steps:
-            - uses: actions/checkout@v4
-            - uses: oven-sh/setup-bun@v1
-              with:
-                  bun-version: latest
-            - name: Setup .npmrc
-              run: |
-                  echo "@gibsonmurray:registry=https://npm.pkg.github.com" > .npmrc
-                  echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM }}" >> .npmrc
-            - name: Publish
-              run: npm publish
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  bun publish
