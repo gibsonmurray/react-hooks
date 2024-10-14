@@ -13,7 +13,10 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 16
-            - run: npm i -D bun
+            - name: Install Bun
+              run: curl -fsSL https://bun.sh/install | bash
+            - name: Add Bun to PATH
+              run: echo 'export PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
             - run: bun run build
 
     publish-gpr:
@@ -28,6 +31,10 @@ jobs:
               with:
                   node-version: 16
                   registry-url: https://npm.pkg.github.com/
+            - name: Install Bun
+              run: curl -fsSL https://bun.sh/install | bash
+            - name: Add Bun to PATH
+              run: echo 'export PATH="$HOME/.bun/bin:$PATH"' >> $GITHUB_ENV
             - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM }}" > ~/.npmrc
             - run: npm publish
               env:

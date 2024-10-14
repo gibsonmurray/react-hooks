@@ -8,7 +8,6 @@
     "repository": "https://github.com/gibsonmurray/react-hooks",
     "homepage": "https://github.com/gibsonmurray/react-hooks#readme",
     "devDependencies": {
-        "bun": "latest",
         "@types/bun": "latest",
         "@types/js-cookie": "^3.0.6",
         "@types/lodash": "^4.17.10",
@@ -28,8 +27,8 @@
     "publishConfig": {
         "@gibsonmurray:registry": "https://npm.pkg.github.com"
     },
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
     "types": "dist/types/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
