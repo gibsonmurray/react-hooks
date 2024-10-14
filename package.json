@@ -1,9 +1,13 @@
 {
     "name": "@gibson/react-hooks",
+    "author": "Gibson Murray",
     "version": "1.0.0",
     "description": "A collection of custom React hooks",
     "module": "index.ts",
     "type": "module",
+    "license": "ISC",
+    "repository": "https://github.com/gibsonmurray/react-hooks",
+    "homepage": "https://github.com/gibsonmurray/react-hooks#readme",
     "devDependencies": {
         "@types/bun": "latest",
         "@types/js-cookie": "^3.0.6",
@@ -23,5 +27,13 @@
     },
     "publishConfig": {
         "@gibsonmurray:registry": "https://npm.pkg.github.com"
+    },
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "bun run build:esm && bun run build:cjs && bun run build:iife",
+        "build:esm": "bun build index.ts --outdir ./dist/esm --format esm",
+        "build:cjs": "bun build index.ts --outdir ./dist/cjs --format cjs",
+        "build:iife": "bun build index.ts --outdir ./dist/iife --format iife"
     }
 }
