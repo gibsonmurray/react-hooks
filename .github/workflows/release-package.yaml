@@ -19,7 +19,8 @@ jobs:
               run: bun run build
             - name: Authenticate with npm
               run: bunx npm login
-              run: "gibsonmurray"
-              run: "${{ secrets.NPM_TOKEN }}"
+              with:
+                  username: gibsonmurray
+                  password: ${{ secrets.NPM_TOKEN }}
             - name: Publish
               run: bun publish
