@@ -1,8 +1,9 @@
-import { type DependencyList } from "react"
 import { useAsync } from "./useAsync"
 
-const DEFAULT_OPTIONS = {
-    headers: { "Content-Type": "application/json" },
+export type FetchOptions = {
+    method?: "GET" | "POST" | "PUT" | "DELETE"
+    headers?: Record<string, string>
+    body?: string
 }
 
 /**
@@ -16,14 +17,14 @@ const DEFAULT_OPTIONS = {
  */
 export function useFetch(
     url: string,
-    options = {},
-    dependencies: DependencyList = []
+    options: FetchOptions = {},
+    dependencies = []
 ) {
     return useAsync(async () => {
-        const res = await fetch(url, { ...DEFAULT_OPTIONS, ...options })
+        const res = await fetch(url, { ...options })
         const data = await res.json()
 
         if (res.ok) return data
-        throw data
+        throw data // This will be caught as an error by useAsync
     }, dependencies)
 }
