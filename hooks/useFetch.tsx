@@ -15,16 +15,28 @@ export type FetchOptions = {
  * @param dependencies - An array of dependencies that trigger the execution of the fetch request.
  * @returns The fetched data.
  */
-export function useFetch(
+export const useFetch = (
     url: string,
     options: FetchOptions = {},
-    dependencies = []
-) {
+    dependencies: any[] = []
+) => {
     return useAsync(async () => {
         const res = await fetch(url, { ...options })
-        const data = await res.json()
 
-        if (res.ok) return data
-        throw data // This will be caught as an error by useAsync
+        if (res.ok) {
+            const contentType = res.headers.get("content-type")
+            if (contentType) {
+                if (contentType.includes("application/json")) {
+                    return await res.json()
+                } else if (contentType.includes("text/")) {
+                    return await res.text()
+                } else if (contentType.includes("application/octet-stream")) {
+                    return await res.blob()
+                }
+            }
+            return res
+        }
+
+        throw new Error(await res.text())
     }, dependencies)
 }
