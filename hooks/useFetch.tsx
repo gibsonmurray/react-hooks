@@ -1,4 +1,5 @@
-import { useAsync } from "./useAsync"
+import { DependencyList } from "react"
+import { AsyncUtils, useAsync } from "./useAsync"
 
 export type FetchOptions = {
     method?: "GET" | "POST" | "PUT" | "DELETE"
@@ -15,11 +16,11 @@ export type FetchOptions = {
  * @param dependencies - An array of dependencies that trigger the execution of the fetch request.
  * @returns The fetched data.
  */
-export const useFetch = (
+export const useFetch = <T,>(
     url: string,
     options: FetchOptions = {},
-    dependencies: any[] = []
-) => {
+    dependencies: DependencyList = []
+): AsyncUtils<T> => {
     return useAsync(async () => {
         const res = await fetch(url, { ...options })
 

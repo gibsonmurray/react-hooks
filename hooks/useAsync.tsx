@@ -2,6 +2,12 @@ import { useState, useEffect, useCallback, type DependencyList } from "react"
 
 export type AsyncFunction<T> = () => Promise<T>
 
+export type AsyncUtils<T> = {
+    loading: boolean
+    error: Error | undefined
+    value: T | undefined
+}
+
 /**
  * `useAsync` is a custom React hook that manages asynchronous operations.
  * It simplifies the process of handling asynchronous tasks by providing a stateful object that tracks loading, error, and value.
@@ -13,7 +19,7 @@ export type AsyncFunction<T> = () => Promise<T>
 export function useAsync<T>(
     callback: AsyncFunction<T>,
     dependencies: DependencyList = []
-) {
+): AsyncUtils<T> {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<Error | undefined>()
     const [value, setValue] = useState<T | undefined>()
