@@ -11,7 +11,7 @@ import { useLocalStorage } from "./useLocalStorage"
  * @returns An array containing the `enabled` state and a function to toggle the dark mode.
  */
 export function useDarkMode() {
-    const [darkMode, setDarkMode] = useLocalStorage("useDarkMode")
+    const [darkMode, setDarkMode] = useLocalStorage<boolean>("useDarkMode")
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
     const enabled = darkMode ?? prefersDarkMode
 
