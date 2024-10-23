@@ -1,4 +1,4 @@
-import { useStorage } from "./useStorage";
+import { useStorage } from "./useStorage"
 
 /**
  * `useSessionStorage` is a custom React hook that manages storage of a value in the browser's sessionStorage.
@@ -8,6 +8,6 @@ import { useStorage } from "./useStorage";
  * @param defaultValue - The initial value of the state.
  * @returns An array containing the value, a function to set the value, and a function to remove the value.
  */
-export function useSessionStorage(key: string, defaultValue?: any) {
-    return useStorage(key, defaultValue, window.sessionStorage)
+export function useSessionStorage<T>(key: string, defaultValue?: T) {
+    return useStorage<T>(window.sessionStorage, key, defaultValue)
 }
