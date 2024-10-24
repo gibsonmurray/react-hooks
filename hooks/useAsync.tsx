@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, type DependencyList } from "react"
 
 export type AsyncFunction<T> = () => Promise<T>
 
-export type AsyncUtils<T> = {
+export type Async<T> = {
     loading: boolean
     error: Error | undefined
     value: T | undefined
@@ -19,7 +19,7 @@ export type AsyncUtils<T> = {
 export function useAsync<T>(
     callback: AsyncFunction<T>,
     dependencies: DependencyList = []
-): AsyncUtils<T> {
+): Async<T> {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<Error | undefined>()
     const [value, setValue] = useState<T | undefined>()

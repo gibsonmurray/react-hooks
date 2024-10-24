@@ -1,5 +1,5 @@
 import { DependencyList } from "react"
-import { AsyncUtils, useAsync } from "./useAsync"
+import { Async, useAsync } from "./useAsync"
 
 export type FetchOptions = {
     method?: "GET" | "POST" | "PUT" | "DELETE"
@@ -20,7 +20,7 @@ export const useFetch = <T,>(
     url: string,
     options: FetchOptions = {},
     dependencies: DependencyList = []
-): AsyncUtils<T> => {
+): Async<T> => {
     return useAsync(async () => {
         const res = await fetch(url, { ...options })
 
